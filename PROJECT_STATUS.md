@@ -6,6 +6,12 @@ DeenAI is a static proof MVP for a citation-gated Islamic AI learning experience
 
 The current build is intentionally pre-production. It does not call a live LLM, does not call live APIs, does not render religious source text, and does not provide religious rulings.
 
+GitHub push: Complete.
+
+Vercel deployment: Complete.
+
+Live demo: [https://deenai-citation-ai.vercel.app/](https://deenai-citation-ai.vercel.app/)
+
 ## Pages Completed
 
 - `index.html`: Static homepage and project positioning.
@@ -47,7 +53,7 @@ Label: Rule-Based Contract Validation
 - No model-performance measurement.
 - No real religious content display.
 - No scholar approval claimed.
-- No fatwa capability claimed.
+- No religious ruling capability claimed.
 - No deployment.
 
 ## Remaining Risks
@@ -60,8 +66,9 @@ Label: Rule-Based Contract Validation
 
 ## Next Roadmap
 
-1. Add CI configuration for the validation command.
-2. Add source adapter interfaces without fetching or displaying religious content.
-3. Add mock screenshots or a recruiter-facing walkthrough.
-4. Add live retrieval only after licensing, citation, and review policies are complete.
-5. Add measured latency and cost checks once live services exist.
+1. Capture screenshots.
+2. Add screenshots to `docs/screenshots`.
+3. Update portfolio card.
+4. Post LinkedIn launch.
+5. Do not add live LLM or live retrieval-generation until source licensing is reviewed.
+6. Add CI configuration for the validation command.

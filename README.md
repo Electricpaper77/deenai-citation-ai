@@ -1,5 +1,11 @@
 # DeenAI
 
+Live demo: [https://deenai-citation-ai.vercel.app/](https://deenai-citation-ai.vercel.app/)
+
+GitHub repo: [https://github.com/Electricpaper77/deenai-citation-ai](https://github.com/Electricpaper77/deenai-citation-ai)
+
+Proof artifacts: 7 source registry entries | 60 eval prompts | 60 pipeline traces | 22 mock retrieval packets | 28 claim-citation cases | 19 render-blocking scenarios | 0 prohibited UI content fields | Full validator: PASS
+
 ## Project Overview
 
 DeenAI is a recruiter-facing Applied GenAI prototype for citation-first Islamic AI learning. The project focuses on the safety and evaluation foundation behind a future learning website for Quran, Sunnah, duas, hadith lookup, prayer basics, and general Islamic education.
@@ -53,7 +59,7 @@ Source governance rules:
 - No invented Quran, Hadith, dua, or religious references.
 - No inferred hadith grading.
 - No scholar approval claimed.
-- No fatwa capability claimed.
+- No religious ruling capability claimed.
 - Licensing review is required before real content display.
 - Prayer time method and local-authority differences must be disclosed.
 
@@ -81,6 +87,24 @@ Documentation:
 - `docs/DEENAI_CITATION_VERIFIER.md`
 - `docs/DEENAI_CLAIM_CITATION_VERIFIER.md`
 - `docs/DEENAI_PRE_UI_SAFETY_CHAIN.md`
+
+## Screenshots
+
+Screenshot placeholders:
+
+- `docs/screenshots/deenai-01-home.png`
+- `docs/screenshots/deenai-02-ask-preview.png`
+- `docs/screenshots/deenai-03-how-it-works.png`
+- `docs/screenshots/deenai-04-sources-proof.png`
+
+## Live Page Verification
+
+Verify these deployed routes after each packaging or deployment change:
+
+- `/`
+- `/ask.html`
+- `/how-it-works.html`
+- `/sources.html`
 
 ## How To Run Validation Scripts
 
@@ -148,7 +172,7 @@ These metrics are rule-based contract validation only. They do not measure live 
 - No model-performance measurement is claimed.
 - No measured production latency or cost is available.
 - No scholar approval is claimed.
-- No fatwa capability is claimed.
+- No religious ruling capability is claimed.
 - Real source display requires licensing and permission review.
 - Religious content rendering remains blocked in the current prototype.
 
