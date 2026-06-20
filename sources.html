@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sources & Proof Artifacts | DeenAI</title>
+    <meta
+      name="description"
+      content="Inspect DeenAI source governance, validation reports, and rule-based contract proof artifacts."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="shell nav-shell" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="DeenAI home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>DeenAI</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="ask.html">Ask DeenAI</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a class="active" href="sources.html">Sources / Proof</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-band">
+        <div class="geometric-orbit" aria-hidden="true"></div>
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Source governance</p>
+            <h1>Sources & Proof Artifacts</h1>
+            <p class="subtitle">
+              DeenAI uses source governance, validation reports, and rule-based contract checks before any Islamic AI answer is rendered.
+            </p>
+            <div class="hero-actions" aria-label="Sources page actions">
+              <a href="#registry">View Registry</a>
+              <a href="#proof">Inspect Proof</a>
+            </div>
+          </div>
+          <aside class="hero-panel glass" aria-label="Proof page status">
+            <p class="panel-label">Validation mode</p>
+            <strong>Metadata before content</strong>
+            <span>
+              This page links proof artifacts and source policies. It does not display live source content or generated religious answers.
+            </span>
+          </aside>
+        </div>
+      </section>
+
+      <section id="registry" class="shell source-section" aria-labelledby="registry-title">
+        <div class="section-heading">
+          <p class="eyebrow">Approved Source Registry</p>
+          <h2 id="registry-title">Seven source entries under review controls</h2>
+        </div>
+        <div class="source-grid">
+          <article class="source-card glass">
+            <span>Quran text source</span>
+            <strong>Tanzil</strong>
+            <p>Canonical text source strategy with checksum, version, and attribution controls before display.</p>
+          </article>
+          <article class="source-card glass">
+            <span>Quran API</span>
+            <strong>Quran.com / Quran Foundation API</strong>
+            <p>API-linked metadata strategy for future lookup and citation-card workflows.</p>
+          </article>
+          <article class="source-card glass">
+            <span>Backup Quran API</span>
+            <strong>Al Quran Cloud</strong>
+            <p>Backup metadata strategy with separate review for editions and display permissions.</p>
+          </article>
+          <article class="source-card glass">
+            <span>Hadith</span>
+            <strong>Sunnah.com API</strong>
+            <p>Metadata-first lookup strategy with no inferred grading and no fabricated references.</p>
+          </article>
+          <article class="source-card glass">
+            <span>Dua</span>
+            <strong>Hisn al-Muslim / Sunnah.com</strong>
+            <p>Provenance-first strategy requiring edition and permission review before display.</p>
+          </article>
+          <article class="source-card glass">
+            <span>Prayer Times</span>
+            <strong>AlAdhan API</strong>
+            <p>Calculated-time strategy requiring method, location, and local-authority caveats.</p>
+          </article>
+          <article class="source-card glass">
+            <span>Local Policy</span>
+            <strong>Source policy / local metadata controls</strong>
+            <p>Internal metadata controls for refusal, escalation, source-missing, and citation boundaries.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="proof" class="section-band proof-section" aria-labelledby="artifact-title">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow">Proof Artifact Inventory</p>
+            <h2 id="artifact-title">Inspectable validation files</h2>
+          </div>
+          <div class="artifact-grid proof-grid">
+            <a class="artifact-card glass" href="sources/source_registry.json">
+              <span>Registry</span>
+              <strong>sources/source_registry.json</strong>
+              <small>Source categories, storage policy, allowed use, and restricted use.</small>
+            </a>
+            <a class="artifact-card glass" href="evals/source_registry_validation_report.json">
+              <span>Registry validation</span>
+              <strong>source_registry_validation_report.json</strong>
+              <small>Checks emitted source IDs against the registry.</small>
+            </a>
+            <a class="artifact-card glass" href="evals/deenai_eval_prompts.jsonl">
+              <span>Eval dataset</span>
+              <strong>deenai_eval_prompts.jsonl</strong>
+              <small>Sixty prompts across learning, refusal, and escalation categories.</small>
+            </a>
+            <a class="artifact-card glass" href="evals/pipeline_eval_summary.json">
+              <span>Pipeline summary</span>
+              <strong>pipeline_eval_summary.json</strong>
+              <small>Rule-based pipeline contract validation.</small>
+            </a>
+            <a class="artifact-card glass" href="evals/mock_retrieval_packets.jsonl">
+              <span>Retrieval packets</span>
+              <strong>mock_retrieval_packets.jsonl</strong>
+              <small>Metadata-only retrieval packets with no source content.</small>
+            </a>
+            <a class="artifact-card glass" href="evals/citation_verification_report.json">
+              <span>Citation packets</span>
+              <strong>citation_verification_report.json</strong>
+              <small>Validation report for retrieval packet metadata.</small>
+            </a>
+            <a class="artifact-card glass" href="evals/mock_claim_citation_cases.jsonl">
+              <span>Claim cases</span>
+              <strong>mock_claim_citation_cases.jsonl</strong>
+              <small>Placeholder claim IDs mapped to source registry IDs.</small>
+            </a>
+            <a class="artifact-card glass" href="evals/claim_citation_verification_report.json">
+              <span>Claim verifier</span>
+              <strong>claim_citation_verification_report.json</strong>
+              <small>Render-blocking report for claim-to-citation checks.</small>
+            </a>
+            <a class="artifact-card glass" href="evals/deenai_pre_ui_safety_summary.json">
+              <span>Pre-UI summary</span>
+              <strong>deenai_pre_ui_safety_summary.json</strong>
+              <small>Rollup of source, pipeline, retrieval, and claim validation.</small>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell metrics-section" aria-labelledby="snapshot-title">
+        <div class="section-heading">
+          <p class="eyebrow">Rule-Based Contract Validation</p>
+          <h2 id="snapshot-title">Validation snapshot</h2>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card glass">
+            <span>Source registry entries</span>
+            <strong>7</strong>
+          </article>
+          <article class="metric-card glass">
+            <span>Eval prompts</span>
+            <strong>60</strong>
+          </article>
+          <article class="metric-card glass">
+            <span>Mock retrieval packets</span>
+            <strong>22</strong>
+          </article>
+          <article class="metric-card glass">
+            <span>Claim-citation cases</span>
+            <strong>28</strong>
+          </article>
+          <article class="metric-card glass">
+            <span>Blocked render cases</span>
+            <strong>19</strong>
+          </article>
+          <article class="metric-card glass">
+            <span>Prohibited content fields</span>
+            <strong>0</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-band split-section" aria-labelledby="rules-title">
+        <div class="shell two-column">
+          <div>
+            <p class="eyebrow">Source Governance Rules</p>
+            <h2 id="rules-title">Rules before rendering</h2>
+          </div>
+          <div class="glass list-panel">
+            <ul class="check-list">
+              <li>No invented Quran, Hadith, dua, or religious references</li>
+              <li>No inferred hadith grading</li>
+              <li>No scholar approval claimed</li>
+              <li>No fatwa capability claimed</li>
+              <li>Licensing review required before real content display</li>
+              <li>Prayer time method and local-authority differences must be disclosed</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell split-section" aria-labelledby="limitations-title">
+        <div class="section-heading">
+          <p class="eyebrow">Remaining Limitations</p>
+          <h2 id="limitations-title">Still static, still careful</h2>
+        </div>
+        <div class="glass list-panel">
+          <ul class="muted-list">
+            <li>No live LLM</li>
+            <li>No live API retrieval</li>
+            <li>No deployed retrieval-generation stack</li>
+            <li>No measured latency or cost</li>
+            <li>No real religious content display yet</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="shell resume-section" aria-labelledby="resume-title">
+        <div class="resume-card glass">
+          <div>
+            <p class="eyebrow">Resume Bullet</p>
+            <h2 id="resume-title">Copyable proof summary</h2>
+          </div>
+          <label for="sources-resume-bullet" class="sr-only">Copyable resume bullet</label>
+          <textarea id="sources-resume-bullet" readonly>Built DeenAI, a citation-gated Islamic AI reliability prototype with source registry validation, 60 rule-based eval prompts, 22 mock retrieval packets, 28 claim-to-citation test cases, and 19 render-blocking scenarios to prevent unsupported religious answers before UI display.</textarea>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <a class="brand" href="index.html" aria-label="DeenAI home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>DeenAI</span>
+        </a>
+        <p>
+          Static proof page. Source content display remains blocked until permissions and verifier integration exist.
+        </p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="ask.html">Ask DeenAI</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="docs/DEENAI_SOURCE_POLICY.md">Source Policy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

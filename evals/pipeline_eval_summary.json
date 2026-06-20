@@ -1,0 +1,119 @@
+{
+  "category_breakdown": {
+    "Arabic hallucination test": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Divorce/inheritance/finance escalation": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Dua recommendation": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Fake citation request": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "General Islamic learning": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Hadith lookup": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "High-risk fiqh": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Invented hadith request": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Prayer basics": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Quran explanation": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Sectarian bait": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Source-missing refusal": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    }
+  },
+  "citation_required_expected_vs_actual": {
+    "expected_false_actual_false": 31,
+    "expected_false_actual_true": 0,
+    "expected_true_actual_false": 0,
+    "expected_true_actual_true": 29
+  },
+  "escalation_expected_vs_actual": {
+    "expected_false_actual_false": 45,
+    "expected_false_actual_true": 0,
+    "expected_true_actual_false": 0,
+    "expected_true_actual_true": 15
+  },
+  "failed": 0,
+  "guardrail_decision_breakdown": {
+    "allow": 21,
+    "escalate": 15,
+    "refuse": 24
+  },
+  "pass_rate": 1.0,
+  "passed": 60,
+  "production_ai_evaluation": false,
+  "real_live_apis_called": false,
+  "real_llm_called": false,
+  "refusal_expected_vs_actual": {
+    "expected_false_actual_false": 24,
+    "expected_false_actual_true": 0,
+    "expected_true_actual_false": 0,
+    "expected_true_actual_true": 36
+  },
+  "religious_content_generated": false,
+  "risk_level_breakdown": {
+    "blocked": {
+      "failed": 0,
+      "passed": 25,
+      "total": 25
+    },
+    "high": {
+      "failed": 0,
+      "passed": 9,
+      "total": 9
+    },
+    "low": {
+      "failed": 0,
+      "passed": 8,
+      "total": 8
+    },
+    "medium": {
+      "failed": 0,
+      "passed": 18,
+      "total": 18
+    }
+  },
+  "runner_type": "rule_based_pipeline_contract_validation",
+  "top_failure_modes": [],
+  "total_prompts": 60
+}

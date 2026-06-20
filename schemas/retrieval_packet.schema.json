@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deenai.local/schemas/retrieval_packet.schema.json",
+  "title": "DeenAI Mock Retrieval Packet",
+  "description": "Metadata-only retrieval packet contract. This schema forbids religious content fields and allows citation metadata only.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packet_id",
+    "eval_id",
+    "user_question",
+    "intent",
+    "risk_level",
+    "source_registry_ids",
+    "retrieved_sources",
+    "citation_required",
+    "retrieval_status",
+    "allowed_to_generate",
+    "notes"
+  ],
+  "properties": {
+    "packet_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "eval_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "user_question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "blocked"]
+    },
+    "source_registry_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "retrieved_sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/retrieved_source"
+      }
+    },
+    "citation_required": {
+      "type": "boolean"
+    },
+    "retrieval_status": {
+      "type": "string",
+      "enum": [
+        "metadata_stubbed",
+        "blocked_before_retrieval",
+        "not_attempted_guardrail",
+        "source_missing"
+      ]
+    },
+    "allowed_to_generate": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "retrieved_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_registry_id",
+        "source_type",
+        "provider",
+        "source_url",
+        "citation_fields",
+        "content_available",
+        "content_placeholder",
+        "licensing_review_required",
+        "allowed_use"
+      ],
+      "properties": {
+        "source_registry_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provider": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "citation_fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "content_available": {
+          "const": false
+        },
+        "content_placeholder": {
+          "const": true
+        },
+        "licensing_review_required": {
+          "type": "boolean"
+        },
+        "allowed_use": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "not": {
+        "anyOf": [
+          { "required": ["arabic"] },
+          { "required": ["quran_text"] },
+          { "required": ["hadith_text"] },
+          { "required": ["dua_text"] },
+          { "required": ["translation"] },
+          { "required": ["transliteration"] },
+          { "required": ["ruling_text"] }
+        ]
+      }
+    }
+  }
+}

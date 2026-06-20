@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deenai.local/schemas/claim_citation.schema.json",
+  "title": "DeenAI Mock Claim Citation Case",
+  "description": "Placeholder claim-to-citation contract. This schema allows claim labels and source IDs only, not religious content.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "eval_id",
+    "user_question",
+    "intent",
+    "risk_level",
+    "guardrail_decision",
+    "allowed_to_answer",
+    "citation_panel_present",
+    "retrieved_source_ids",
+    "placeholder_claims",
+    "expected_verification_result",
+    "expected_render_decision",
+    "notes"
+  ],
+  "properties": {
+    "case_id": { "type": "string", "minLength": 1 },
+    "eval_id": { "type": "string", "minLength": 1 },
+    "user_question": { "type": "string", "minLength": 1 },
+    "intent": { "type": "string", "minLength": 1 },
+    "risk_level": { "type": "string", "enum": ["low", "medium", "high", "blocked"] },
+    "guardrail_decision": { "type": "string", "enum": ["allow", "refuse", "escalate"] },
+    "allowed_to_answer": { "type": "boolean" },
+    "citation_panel_present": { "type": "boolean" },
+    "retrieved_source_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "placeholder_claims": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/placeholder_claim" }
+    },
+    "expected_verification_result": {
+      "type": "string",
+      "enum": ["pass", "fail"]
+    },
+    "expected_render_decision": {
+      "type": "string",
+      "enum": ["render_answer", "block_render", "refuse", "escalate"]
+    },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "placeholder_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "claim_type",
+        "claim_text_placeholder",
+        "required_source_type",
+        "mapped_source_registry_id",
+        "citation_required",
+        "support_status"
+      ],
+      "properties": {
+        "claim_id": { "type": "string", "minLength": 1 },
+        "claim_type": { "type": "string", "minLength": 1 },
+        "claim_text_placeholder": { "type": "string", "minLength": 1 },
+        "required_source_type": { "type": "string", "minLength": 1 },
+        "mapped_source_registry_id": {
+          "type": ["string", "null"]
+        },
+        "citation_required": { "type": "boolean" },
+        "support_status": {
+          "type": "string",
+          "enum": ["supported", "unsupported", "not_applicable"]
+        }
+      },
+      "not": {
+        "anyOf": [
+          { "required": ["arabic"] },
+          { "required": ["quran_text"] },
+          { "required": ["hadith_text"] },
+          { "required": ["dua_text"] },
+          { "required": ["translation"] },
+          { "required": ["transliteration"] },
+          { "required": ["ruling_text"] }
+        ]
+      }
+    }
+  }
+}

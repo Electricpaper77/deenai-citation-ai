@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How DeenAI Works | Evaluation Methodology</title>
+    <meta
+      name="description"
+      content="DeenAI static methodology page showing the citation-gated safety chain before answer rendering."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="shell nav-shell" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="DeenAI home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>DeenAI</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="ask.html">Ask DeenAI</a>
+          <a class="active" href="how-it-works.html">How It Works</a>
+          <a href="sources.html">Sources / Proof</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-band">
+        <div class="geometric-orbit" aria-hidden="true"></div>
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Rule-based contract validation</p>
+            <h1>How DeenAI Verifies Islamic AI Answers Before Rendering</h1>
+            <p class="subtitle">
+              A citation-gated safety chain for Quran, Sunnah, duas, and Islamic learning.
+            </p>
+            <div class="hero-actions" aria-label="Primary proof artifacts">
+              <a href="docs/DEENAI_PRE_UI_SAFETY_CHAIN.md">Safety Chain</a>
+              <a href="evals/deenai_pre_ui_safety_summary.json">Summary JSON</a>
+            </div>
+          </div>
+          <aside class="hero-panel glass" aria-label="Current readiness status">
+            <p class="panel-label">UI readiness</p>
+            <strong>Static methodology UI only</strong>
+            <span>
+              No live LLM, no live API retrieval, no deployed retrieval accuracy claims, no scholar approval claimed, and not a religious ruling system.
+            </span>
+          </aside>
+        </div>
+      </section>
+
+      <section class="shell metrics-section" aria-labelledby="metrics-title">
+        <div class="section-heading">
+          <p class="eyebrow">Validation Metrics</p>
+          <h2 id="metrics-title">Pre-UI proof counts</h2>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card glass">
+            <span>Source registry entries</span>
+            <strong>7</strong>
+          </article>
+          <article class="metric-card glass">
+            <span>Eval prompts</span>
+            <strong>60</strong>
+          </article>
+          <article class="metric-card glass">
+            <span>Mock retrieval packets</span>
+            <strong>22</strong>
+          </article>
+          <article class="metric-card glass">
+            <span>Claim-citation cases</span>
+            <strong>28</strong>
+          </article>
+          <article class="metric-card glass">
+            <span>Blocked render cases</span>
+            <strong>19</strong>
+          </article>
+          <article class="metric-card glass">
+            <span>Prohibited content fields</span>
+            <strong>0</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-band chain-section" aria-labelledby="chain-title">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow">Safety Chain Diagram</p>
+            <h2 id="chain-title">Every answer state passes through gates</h2>
+          </div>
+          <ol class="chain" aria-label="Validation chain">
+            <li>Source Registry</li>
+            <li>Pipeline Eval</li>
+            <li>Retrieval Packet</li>
+            <li>Citation Verification</li>
+            <li>Claim Mapping</li>
+            <li>Render Decision</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="shell split-section" aria-labelledby="blocked-title">
+        <div class="section-heading">
+          <p class="eyebrow">Guardrails</p>
+          <h2 id="blocked-title">What gets blocked</h2>
+        </div>
+        <div class="two-column">
+          <div class="glass list-panel">
+            <ul class="check-list">
+              <li>Invented hadith</li>
+              <li>Fake citations</li>
+              <li>Unsupported religious claims</li>
+              <li>High-risk fatwa or ruling requests</li>
+              <li>Citation bypass requests</li>
+              <li>Sectarian bait</li>
+            </ul>
+          </div>
+          <div class="glass method-panel">
+            <p class="panel-label">Render rule</p>
+            <p>
+              DeenAI can show a normal answer placeholder only when source IDs are valid,
+              citation requirements are satisfied, and claim mappings pass. Otherwise the UI
+              must show a refusal, escalation, source-missing, or verifier-failed state.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell" aria-labelledby="artifact-title">
+        <div class="section-heading">
+          <p class="eyebrow">Proof Artifacts</p>
+          <h2 id="artifact-title">Inspectable contract outputs</h2>
+        </div>
+        <div class="artifact-grid">
+          <a class="artifact-card glass" href="sources/source_registry.json">
+            <span>Source registry</span>
+            <strong>source_registry.json</strong>
+            <small>Approved source categories and usage boundaries.</small>
+          </a>
+          <a class="artifact-card glass" href="evals/pipeline_eval_summary.json">
+            <span>Pipeline eval</span>
+            <strong>pipeline_eval_summary.json</strong>
+            <small>60-prompt rule-based pipeline contract validation.</small>
+          </a>
+          <a class="artifact-card glass" href="evals/citation_verification_report.json">
+            <span>Retrieval packet verifier</span>
+            <strong>citation_verification_report.json</strong>
+            <small>Metadata-only source packet checks.</small>
+          </a>
+          <a class="artifact-card glass" href="evals/claim_citation_verification_report.json">
+            <span>Claim mapping verifier</span>
+            <strong>claim_citation_verification_report.json</strong>
+            <small>Claim IDs mapped to verified source IDs before rendering.</small>
+          </a>
+        </div>
+      </section>
+
+      <section class="section-band limitations-section" aria-labelledby="limitations-title">
+        <div class="shell two-column">
+          <div>
+            <p class="eyebrow">Limitations</p>
+            <h2 id="limitations-title">What is not measured yet</h2>
+          </div>
+          <div class="glass list-panel">
+            <ul class="muted-list">
+              <li>Rule-based contract validation only.</li>
+              <li>No live LLM yet.</li>
+              <li>No live API retrieval yet.</li>
+              <li>No real latency or cost measurement yet.</li>
+              <li>Licensing review still required.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell resume-section" aria-labelledby="resume-title">
+        <div class="resume-card glass">
+          <div>
+            <p class="eyebrow">Resume Bullet</p>
+            <h2 id="resume-title">Recruiter-facing proof</h2>
+          </div>
+          <label for="resume-bullet" class="sr-only">Copyable resume bullet</label>
+          <textarea id="resume-bullet" readonly>Designed DeenAI's pre-UI AI safety evaluation chain, including source registry validation, rule-based pipeline evals, metadata-only retrieval packet checks, and claim-to-citation render blocking for high-risk Islamic learning scenarios.</textarea>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <a class="brand" href="index.html" aria-label="DeenAI home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>DeenAI</span>
+        </a>
+        <p>
+          Static methodology page. Metrics are rule-based contract validation only.
+        </p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="ask.html">Ask DeenAI</a>
+          <a href="sources.html">Sources / Proof</a>
+          <a href="docs/DEENAI_SOURCE_POLICY.md">Source Policy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ask DeenAI Preview | Safe UI States</title>
+    <meta
+      name="description"
+      content="A placeholder-only DeenAI interface preview showing allowed, refused, escalated, and source-missing answer states."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="shell nav-shell" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="DeenAI home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>DeenAI</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a class="active" href="ask.html">Ask DeenAI</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="sources.html">Sources / Proof</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-band">
+        <div class="geometric-orbit" aria-hidden="true"></div>
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Safe UI state preview</p>
+            <h1>Ask DeenAI Preview</h1>
+            <p class="subtitle">
+              A placeholder-only interface showing how citation-gated Islamic AI answers are allowed, refused, escalated, or blocked before rendering.
+            </p>
+            <div class="hero-actions" aria-label="Ask preview actions">
+              <a href="#demo-input">View Sample Prompts</a>
+              <a href="#states">Inspect UI States</a>
+            </div>
+          </div>
+          <aside class="hero-panel glass" aria-label="Preview mode">
+            <p class="panel-label">Rendering boundary</p>
+            <strong>Placeholders only</strong>
+            <span>
+              This page demonstrates answer containers, guardrail outcomes, and citation panel requirements without calling an LLM, live APIs, or religious content sources.
+            </span>
+          </aside>
+        </div>
+      </section>
+
+      <section id="demo-input" class="shell ask-section" aria-labelledby="demo-input-title">
+        <div class="section-heading">
+          <p class="eyebrow">Demo Input Panel</p>
+          <h2 id="demo-input-title">Static prompt categories</h2>
+        </div>
+        <div class="demo-input-panel glass">
+          <p>
+            These chips represent prompt categories only. They do not contain real religious text, source excerpts, alternate-script content, or rulings.
+          </p>
+          <div class="prompt-chip-grid" aria-label="Static sample prompt chips">
+            <span class="prompt-chip">Dua recommendation</span>
+            <span class="prompt-chip">Quran explanation</span>
+            <span class="prompt-chip">Invented Hadith request</span>
+            <span class="prompt-chip">High-risk ruling request</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="states" class="section-band state-section" aria-labelledby="states-title">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow">Rendered Outcomes</p>
+            <h2 id="states-title">Four safe UI states after validation</h2>
+          </div>
+          <div class="state-grid">
+            <article class="state-card glass">
+              <div class="state-header">
+                <span class="status-badge status-allowed">Allowed</span>
+                <h3>UI State 1: Citation-Grounded Placeholder</h3>
+              </div>
+              <dl class="state-meta">
+                <div>
+                  <dt>Status</dt>
+                  <dd>Allowed with citation panel required</dd>
+                </div>
+                <div>
+                  <dt>Intent</dt>
+                  <dd>Islamic learning</dd>
+                </div>
+                <div>
+                  <dt>Risk</dt>
+                  <dd>Low/medium</dd>
+                </div>
+                <div>
+                  <dt>Source packet</dt>
+                  <dd>Verified metadata placeholder</dd>
+                </div>
+                <div>
+                  <dt>Claim check</dt>
+                  <dd>Supported placeholder claim</dd>
+                </div>
+                <div>
+                  <dt>Render decision</dt>
+                  <dd>Allowed</dd>
+                </div>
+              </dl>
+              <div class="placeholder-box">
+                <span>Answer body</span>
+                <p>Placeholder only. Final answer text remains gated behind verified sources, citation mapping, and display permissions.</p>
+              </div>
+            </article>
+
+            <article class="state-card glass">
+              <div class="state-header">
+                <span class="status-badge status-refused">Refused</span>
+                <h3>UI State 2: Refusal</h3>
+              </div>
+              <dl class="state-meta">
+                <div>
+                  <dt>Status</dt>
+                  <dd>Refused</dd>
+                </div>
+                <div>
+                  <dt>Reason</dt>
+                  <dd>Invented religious source request / fake citation risk</dd>
+                </div>
+                <div>
+                  <dt>Render decision</dt>
+                  <dd>Blocked</dd>
+                </div>
+              </dl>
+              <div class="placeholder-box">
+                <span>Safe response template</span>
+                <p>Placeholder refusal copy. The UI would explain that unsupported or fabricated source requests cannot be fulfilled.</p>
+              </div>
+            </article>
+
+            <article class="state-card glass">
+              <div class="state-header">
+                <span class="status-badge status-escalated">Escalated</span>
+                <h3>UI State 3: Scholar Escalation</h3>
+              </div>
+              <dl class="state-meta">
+                <div>
+                  <dt>Status</dt>
+                  <dd>Escalated</dd>
+                </div>
+                <div>
+                  <dt>Reason</dt>
+                  <dd>High-risk fiqh/ruling category</dd>
+                </div>
+                <div>
+                  <dt>Render decision</dt>
+                  <dd>Blocked from normal answer</dd>
+                </div>
+              </dl>
+              <div class="placeholder-box">
+                <span>Safe response template</span>
+                <p>Placeholder escalation copy. The UI would direct the user to consult a qualified scholar or local authority.</p>
+              </div>
+            </article>
+
+            <article class="state-card glass">
+              <div class="state-header">
+                <span class="status-badge status-missing">Source context missing</span>
+                <h3>UI State 4: Source-Missing</h3>
+              </div>
+              <dl class="state-meta">
+                <div>
+                  <dt>Status</dt>
+                  <dd>Source context missing</dd>
+                </div>
+                <div>
+                  <dt>Reason</dt>
+                  <dd>No verified source packet available</dd>
+                </div>
+                <div>
+                  <dt>Render decision</dt>
+                  <dd>Blocked</dd>
+                </div>
+              </dl>
+              <div class="placeholder-box">
+                <span>Safe response template</span>
+                <p>Placeholder source-missing copy. The UI would avoid answering until verified metadata and citations are available.</p>
+              </div>
+            </article>
+
+            <article class="state-card glass">
+              <div class="state-header">
+                <span class="status-badge status-blocked">Blocked</span>
+                <h3>Verifier Failed / Unsupported Claim</h3>
+              </div>
+              <dl class="state-meta">
+                <div>
+                  <dt>Status</dt>
+                  <dd>Blocked</dd>
+                </div>
+                <div>
+                  <dt>Reason</dt>
+                  <dd>Placeholder claim did not map to a verified source ID or required source type</dd>
+                </div>
+                <div>
+                  <dt>Render decision</dt>
+                  <dd>Blocked before answer display</dd>
+                </div>
+                <div>
+                  <dt>Citation check</dt>
+                  <dd>Failed</dd>
+                </div>
+              </dl>
+              <div class="placeholder-box">
+                <span>Safe response</span>
+                <p>Placeholder-only blocked response template.</p>
+                <p>DeenAI cannot render an Islamic answer when source support is missing, mismatched, or unverifiable.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell chain-section" aria-labelledby="mini-chain-title">
+        <div class="section-heading">
+          <p class="eyebrow">Safety Chain Mini-Diagram</p>
+          <h2 id="mini-chain-title">Input to render decision</h2>
+        </div>
+        <ol class="chain mini-chain" aria-label="Ask DeenAI safety chain">
+          <li>Input</li>
+          <li>Classifier</li>
+          <li>Retrieval Packet</li>
+          <li>Citation Verifier</li>
+          <li>Claim Mapping</li>
+          <li>Guardrail</li>
+          <li>Render Decision</li>
+        </ol>
+      </section>
+
+      <section class="section-band metrics-section" aria-labelledby="ask-metrics-title">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow">Rule-Based Contract Validation</p>
+            <h2 id="ask-metrics-title">Proof metrics strip</h2>
+          </div>
+          <div class="metric-grid ask-metric-grid">
+            <article class="metric-card glass">
+              <span>Eval prompts</span>
+              <strong>60</strong>
+            </article>
+            <article class="metric-card glass">
+              <span>Mock retrieval packets</span>
+              <strong>22</strong>
+            </article>
+            <article class="metric-card glass">
+              <span>Claim-citation cases</span>
+              <strong>28</strong>
+            </article>
+            <article class="metric-card glass">
+              <span>Blocked render cases</span>
+              <strong>19</strong>
+            </article>
+            <article class="metric-card glass">
+              <span>Prohibited content fields</span>
+              <strong>0</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell resume-section" aria-labelledby="ask-resume-title">
+        <div class="resume-card glass">
+          <div>
+            <p class="eyebrow">Resume Bullet</p>
+            <h2 id="ask-resume-title">Copyable reliability summary</h2>
+          </div>
+          <label for="ask-resume-bullet" class="sr-only">Copyable resume bullet</label>
+          <textarea id="ask-resume-bullet" readonly>Built DeenAI, a citation-gated Islamic AI reliability prototype with source registry validation, 60 rule-based eval prompts, 22 mock retrieval packets, 28 claim-to-citation test cases, and 19 render-blocking scenarios to prevent unsupported religious answers before UI display.</textarea>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <a class="brand" href="index.html" aria-label="DeenAI home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>DeenAI</span>
+        </a>
+        <p>
+          Static Ask preview. Placeholder states only; no live LLM, API retrieval, or religious source rendering.
+        </p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="sources.html">Sources / Proof</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

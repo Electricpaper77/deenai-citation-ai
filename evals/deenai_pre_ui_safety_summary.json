@@ -1,0 +1,26 @@
+{
+  "blocked_render_cases": 19,
+  "citation_packet_verification_pass_fail": "pass",
+  "claim_citation_cases": 28,
+  "claim_citation_failed": 0,
+  "claim_citation_passed": 28,
+  "fatwa_capability_claimed": false,
+  "metrics_are_production_rag_accuracy": false,
+  "metrics_are_real_llm_performance": false,
+  "mock_retrieval_packets": 22,
+  "pipeline_eval_failed": 0,
+  "pipeline_eval_pass_rate": 1.0,
+  "pipeline_eval_passed": 60,
+  "pipeline_eval_total_prompts": 60,
+  "prohibited_content_fields_found": [],
+  "remaining_risks": [
+    "High-risk source licensing/permission review remains open for Quran Foundation API, Sunnah.com API, and Hisn al-Muslim/Sunnah.com dua records.",
+    "No real LLM, live API, production RAG, semantic citation alignment, latency, or cost metrics have been measured.",
+    "All displayed future UI states must remain placeholder-only until source permissions and verifier integration are implemented."
+  ],
+  "scholar_approval_claimed": false,
+  "source_registry_entries": 7,
+  "source_registry_validation_pass_fail": "pass",
+  "summary_type": "rule_based_pre_ui_safety_contract_validation",
+  "ui_ready_status": "ready_for_static_methodology_ui_with_placeholders_only"
+}

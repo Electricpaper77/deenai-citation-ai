@@ -1,0 +1,364 @@
+{
+  "project": "DeenAI",
+  "registry_version": "0.2.0",
+  "last_reviewed": "2026-06-20",
+  "purpose": "Source-type registry for citation-first Islamic learning. This file records candidate providers, storage rules, citation requirements, and risks before UI implementation.",
+  "global_rules": [
+    "Do not store or display copied Quran, hadith, dua, adhkar, Arabic, transliteration, or translation text unless the exact source, license, and attribution requirements are verified.",
+    "Do not claim institutional or scholarly endorsement.",
+    "Do not present DeenAI as a religious ruling system.",
+    "Do not infer hadith grades, Quran interpretation, dua benefits, or legal rulings from model knowledge.",
+    "Any generated answer must cite source records retrieved for the current request."
+  ],
+  "source_categories": [
+    {
+      "source_id": "quran_arabic_tanzil",
+      "id": "quran_arabic_tanzil",
+      "content_type": "Quran Arabic",
+      "category": "Quran Arabic",
+      "provider": "Tanzil",
+      "source_name": "Tanzil",
+      "url": "https://tanzil.net/download/",
+      "source_url": "https://tanzil.net/download/",
+      "storage_policy": {
+        "can_store_locally": true,
+        "api_linked_only": false,
+        "status": "metadata_only_until_ingestion_checksum_and_terms_review"
+      },
+      "citation_required_fields": [
+        "source_id",
+        "provider",
+        "url",
+        "surah_number",
+        "ayah_number",
+        "text_edition",
+        "text_version",
+        "checksum",
+        "ingested_at",
+        "license_note"
+      ],
+      "required_citation_fields": [
+        "source_id",
+        "provider",
+        "source_url",
+        "surah_number",
+        "ayah_number",
+        "text_edition",
+        "text_version",
+        "checksum",
+        "ingested_at",
+        "license_note"
+      ],
+      "allowed_use": [
+        "Metadata planning for Quran Arabic lookup.",
+        "Future verbatim display only after terms review, checksum tracking, version tracking, and attribution requirements are implemented."
+      ],
+      "restricted_use": [
+        "No modified Quran text.",
+        "No display without source attribution.",
+        "No model-generated Quran Arabic.",
+        "No local text storage before checksum and current terms review."
+      ],
+      "risk_level": "medium",
+      "notes": "Use canonical surah and ayah identifiers. Preserve selected edition exactly if future ingestion is approved."
+    },
+    {
+      "source_id": "quran_api_quran_foundation",
+      "id": "quran_api_quran_foundation",
+      "content_type": "Quran API",
+      "category": "Quran API",
+      "provider": "Quran.com / Quran Foundation API",
+      "source_name": "Quran.com / Quran Foundation API",
+      "url": "https://api-docs.quran.foundation/",
+      "source_url": "https://api-docs.quran.foundation/",
+      "storage_policy": {
+        "can_store_locally": false,
+        "api_linked_only": true,
+        "status": "api_linked_metadata_only"
+      },
+      "citation_required_fields": [
+        "source_id",
+        "provider",
+        "url",
+        "api_endpoint",
+        "resource_type",
+        "surah_number",
+        "ayah_number",
+        "translation_id",
+        "translator_or_edition",
+        "retrieved_at",
+        "license_note"
+      ],
+      "required_citation_fields": [
+        "source_id",
+        "provider",
+        "source_url",
+        "api_endpoint",
+        "resource_type",
+        "surah_number",
+        "ayah_number",
+        "translation_id",
+        "translator_or_edition",
+        "retrieved_at",
+        "license_note"
+      ],
+      "allowed_use": [
+        "Metadata planning for Quran lookup, translation lookup, search, and citation-card structure.",
+        "Future API-linked retrieval after access and terms review."
+      ],
+      "restricted_use": [
+        "No local cache of API content unless terms allow it.",
+        "No display of translations without translator or edition attribution.",
+        "No republishing of API content beyond provider terms."
+      ],
+      "risk_level": "high",
+      "notes": "Useful API surface, but translation, tafsir, audio, and derived content need field-level permission review."
+    },
+    {
+      "source_id": "quran_api_al_quran_cloud_backup",
+      "id": "quran_api_al_quran_cloud_backup",
+      "content_type": "Backup Quran API",
+      "category": "Backup Quran API",
+      "provider": "Al Quran Cloud",
+      "source_name": "Al Quran Cloud",
+      "url": "https://alquran.cloud/api",
+      "source_url": "https://alquran.cloud/api",
+      "storage_policy": {
+        "can_store_locally": false,
+        "api_linked_only": true,
+        "status": "api_linked_metadata_only"
+      },
+      "citation_required_fields": [
+        "source_id",
+        "provider",
+        "url",
+        "api_endpoint",
+        "edition_identifier",
+        "surah_number",
+        "ayah_number",
+        "translator_or_edition",
+        "retrieved_at",
+        "license_note"
+      ],
+      "required_citation_fields": [
+        "source_id",
+        "provider",
+        "source_url",
+        "api_endpoint",
+        "edition_identifier",
+        "surah_number",
+        "ayah_number",
+        "translator_or_edition",
+        "retrieved_at",
+        "license_note"
+      ],
+      "allowed_use": [
+        "Backup metadata planning for Quran API lookup.",
+        "Future API-linked lookup if primary API is unavailable and terms review is complete."
+      ],
+      "restricted_use": [
+        "No local content storage before terms review.",
+        "No translation display without edition attribution.",
+        "No recitation or audio use without separate rights review."
+      ],
+      "risk_level": "medium",
+      "notes": "Backup role only. Translation and recitation rights may differ by edition."
+    },
+    {
+      "source_id": "hadith_sunnah_api",
+      "id": "hadith_sunnah_api",
+      "content_type": "Hadith",
+      "category": "Hadith",
+      "provider": "Sunnah.com API",
+      "source_name": "Sunnah.com API",
+      "url": "https://sunnah.com/developers",
+      "source_url": "https://sunnah.com/developers",
+      "storage_policy": {
+        "can_store_locally": false,
+        "api_linked_only": true,
+        "status": "api_linked_metadata_only"
+      },
+      "citation_required_fields": [
+        "source_id",
+        "provider",
+        "url",
+        "collection",
+        "book_or_chapter",
+        "hadith_number_or_provider_id",
+        "language",
+        "grade_source",
+        "retrieved_at",
+        "license_note"
+      ],
+      "required_citation_fields": [
+        "source_id",
+        "provider",
+        "source_url",
+        "collection",
+        "book_or_chapter",
+        "hadith_number_or_provider_id",
+        "language",
+        "grade_source",
+        "retrieved_at",
+        "license_note"
+      ],
+      "allowed_use": [
+        "Metadata planning for hadith lookup and citation-card structure.",
+        "Future API-linked retrieval after API access, terms review, and field-level display policy."
+      ],
+      "restricted_use": [
+        "No copied bulk data.",
+        "No hadith text display before access and permission review.",
+        "No generated hadith wording.",
+        "No grade display unless grade metadata is directly provided by the retrieved record."
+      ],
+      "risk_level": "high",
+      "notes": "Hadith numbering, translation, grading metadata, and collection scope are sensitive. Missing metadata should trigger source-missing or citation-only behavior."
+    },
+    {
+      "source_id": "dua_hisn_almuslim_sunnah",
+      "id": "dua_hisn_almuslim_sunnah",
+      "content_type": "Dua",
+      "category": "Dua",
+      "provider": "Hisn al-Muslim / Sunnah.com",
+      "source_name": "Hisn al-Muslim / Sunnah.com",
+      "url": "https://sunnah.com/developers",
+      "source_url": "https://sunnah.com/developers",
+      "storage_policy": {
+        "can_store_locally": false,
+        "api_linked_only": true,
+        "status": "metadata_only_pending_specific_edition_permission"
+      },
+      "citation_required_fields": [
+        "source_id",
+        "provider",
+        "url",
+        "collection_or_book",
+        "chapter_or_category",
+        "record_id",
+        "translation_source",
+        "transliteration_source",
+        "retrieved_at",
+        "license_note"
+      ],
+      "required_citation_fields": [
+        "source_id",
+        "provider",
+        "source_url",
+        "collection_or_book",
+        "chapter_or_category",
+        "record_id",
+        "translation_source",
+        "transliteration_source",
+        "retrieved_at",
+        "license_note"
+      ],
+      "allowed_use": [
+        "Metadata planning for dua and adhkar lookup.",
+        "Future display only after a specific edition, translation, transliteration, and permission status are documented."
+      ],
+      "restricted_use": [
+        "No copied dua text before provenance and permission review.",
+        "No generated Arabic wording.",
+        "No generated transliteration.",
+        "No invented usage benefits or outcomes."
+      ],
+      "risk_level": "high",
+      "notes": "Dua text and transliteration errors can change meaning. Treat unsourced dua wording as blocked."
+    },
+    {
+      "source_id": "prayer_times_aladhan",
+      "id": "prayer_times_aladhan",
+      "content_type": "Prayer Time",
+      "category": "Prayer Times",
+      "provider": "AlAdhan API",
+      "source_name": "AlAdhan API",
+      "url": "https://aladhan.com/prayer-times-api",
+      "source_url": "https://aladhan.com/prayer-times-api",
+      "storage_policy": {
+        "can_store_locally": true,
+        "api_linked_only": false,
+        "status": "computed_response_cache_allowed_after_terms_review"
+      },
+      "citation_required_fields": [
+        "source_id",
+        "provider",
+        "url",
+        "location_label",
+        "latitude_precision",
+        "longitude_precision",
+        "timezone",
+        "date",
+        "calculation_method",
+        "school_or_asr_setting",
+        "retrieved_at",
+        "license_note"
+      ],
+      "required_citation_fields": [
+        "source_id",
+        "provider",
+        "source_url",
+        "location_label",
+        "latitude_precision",
+        "longitude_precision",
+        "timezone",
+        "date",
+        "calculation_method",
+        "school_or_asr_setting",
+        "retrieved_at",
+        "license_note"
+      ],
+      "allowed_use": [
+        "Metadata planning for calculated prayer-time responses.",
+        "Future API-linked calculation with method, date, location, timezone, and caveat display."
+      ],
+      "restricted_use": [
+        "No presentation as a universal local authority.",
+        "No omission of calculation method.",
+        "No omission of local mosque or institutional variance caveat."
+      ],
+      "risk_level": "medium",
+      "notes": "Computed prayer times may differ by method and local institution. Output must be framed as calculated provider data."
+    },
+    {
+      "source_id": "source_policy",
+      "id": "source_policy",
+      "content_type": "Policy",
+      "category": "Policy",
+      "provider": "DeenAI Internal Source Policy",
+      "source_name": "DeenAI Internal Source Policy",
+      "url": "docs/DEENAI_SOURCE_POLICY.md",
+      "source_url": "docs/DEENAI_SOURCE_POLICY.md",
+      "storage_policy": {
+        "can_store_locally": true,
+        "api_linked_only": false,
+        "status": "local_project_policy_document"
+      },
+      "citation_required_fields": [
+        "source_id",
+        "provider",
+        "url",
+        "document_version",
+        "section",
+        "updated_at"
+      ],
+      "required_citation_fields": [
+        "source_id",
+        "provider",
+        "source_url",
+        "document_version",
+        "section",
+        "updated_at"
+      ],
+      "allowed_use": [
+        "Internal policy reference for source-missing behavior, refusal boundaries, escalation routing, and citation requirements."
+      ],
+      "restricted_use": [
+        "No use as a primary religious source.",
+        "No replacement for Quran, hadith, dua, or prayer-time provider records."
+      ],
+      "risk_level": "low",
+      "notes": "Internal policy source used by the stub pipeline when a query is blocked before external retrieval."
+    }
+  ]
+}

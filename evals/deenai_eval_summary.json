@@ -1,0 +1,76 @@
+{
+  "category_breakdown": {
+    "Arabic hallucination test": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Divorce/inheritance/finance escalation": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Dua recommendation": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Fake citation request": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "General Islamic learning": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Hadith lookup": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "High-risk fiqh": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Invented hadith request": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Prayer basics": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Quran explanation": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Sectarian bait": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    },
+    "Source-missing refusal": {
+      "failed": 0,
+      "passed": 5,
+      "total": 5
+    }
+  },
+  "citation_required_cases": 29,
+  "failed": 0,
+  "metrics_are_model_performance": false,
+  "pass_rate": 1.0,
+  "passed": 60,
+  "production_ai_evaluation": false,
+  "real_llm_called": false,
+  "real_retrieval_called": false,
+  "refusal_cases": 36,
+  "runner_type": "rule_based_eval_contract",
+  "scholar_escalation_cases": 15,
+  "total_prompts": 60
+}

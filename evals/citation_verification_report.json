@@ -1,0 +1,18 @@
+{
+  "failed": 0,
+  "invalid_source_metadata": [],
+  "missing_source_ids": [],
+  "pass_fail": "pass",
+  "pass_rate": 1.0,
+  "passed": 22,
+  "prohibited_content_fields_found": [],
+  "real_apis_called": false,
+  "real_llm_called": false,
+  "religious_content_loaded": false,
+  "total_packets": 22,
+  "unsafe_generation_flags": [],
+  "verifier_type": "metadata_only_citation_packet_contract",
+  "warnings": [
+    "High-risk registry sources still require field-level licensing and permission review before real retrieval."
+  ]
+}

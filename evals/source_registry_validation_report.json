@@ -1,0 +1,21 @@
+{
+  "invalid_registry_entries": [],
+  "missing_source_references": [],
+  "pass_fail": "pass",
+  "real_apis_called": false,
+  "religious_content_loaded": false,
+  "total_registry_entries": 7,
+  "total_source_ids_referenced_by_pipeline": 6,
+  "valid_source_references": [
+    "dua_hisn_almuslim_sunnah",
+    "hadith_sunnah_api",
+    "prayer_times_aladhan",
+    "quran_api_quran_foundation",
+    "quran_arabic_tanzil",
+    "source_policy"
+  ],
+  "validator_type": "source_registry_usage_contract",
+  "warnings": [
+    "High-risk source entries require field-level licensing and permission review: dua_hisn_almuslim_sunnah, hadith_sunnah_api, quran_api_quran_foundation"
+  ]
+}
