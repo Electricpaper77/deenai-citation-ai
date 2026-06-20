@@ -75,23 +75,27 @@
             </div>
 
             <div class="glass trace-output" aria-live="polite">
-              <div class="trace-output-header">
-                <div>
+              <div class="decision-console">
+                <div class="score-grid">
+                  <article class="score-card">
+                    <span>Risk score</span>
+                    <strong id="trace-risk-score">10</strong>
+                  </article>
+                  <article class="score-card">
+                    <span>Citation score</span>
+                    <strong id="trace-citation-score">100</strong>
+                  </article>
+                </div>
+                <div class="decision-summary">
                   <p class="panel-label">Final Decision</p>
                   <h3 id="trace-decision-title">ALLOW</h3>
+                  <span id="trace-decision-badge" class="decision-badge decision-allow">ALLOW</span>
                 </div>
-                <span id="trace-decision-badge" class="decision-badge decision-allow">ALLOW</span>
               </div>
 
-              <div class="score-grid">
-                <article class="score-card">
-                  <span>Risk score</span>
-                  <strong id="trace-risk-score">10</strong>
-                </article>
-                <article class="score-card">
-                  <span>Citation score</span>
-                  <strong id="trace-citation-score">100</strong>
-                </article>
+              <div class="trace-reason-line">
+                <span>Reason</span>
+                <strong id="trace-reason">Risk is below threshold and citation score meets render requirements.</strong>
               </div>
 
               <ol id="trace-chain" class="trace-chain" aria-label="Deterministic safety trace">
@@ -121,7 +125,7 @@
                 </li>
               </ol>
 
-              <dl class="trace-detail-grid">
+              <dl class="trace-detail-grid trace-detail-secondary">
                 <div>
                   <dt>User prompt type</dt>
                   <dd id="trace-prompt-type">Dua recommendation</dd>
@@ -153,10 +157,6 @@
                 <div>
                   <dt>Render decision</dt>
                   <dd id="trace-render-decision">allowed</dd>
-                </div>
-                <div>
-                  <dt>Reason</dt>
-                  <dd id="trace-reason">Risk is below threshold and citation score meets render requirements.</dd>
                 </div>
               </dl>
             </div>
