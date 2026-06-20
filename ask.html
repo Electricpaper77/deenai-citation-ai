@@ -27,7 +27,7 @@
     </header>
 
     <main>
-      <section class="hero section-band">
+      <section class="hero ask-hero section-band">
         <div class="geometric-orbit" aria-hidden="true"></div>
         <div class="shell hero-grid">
           <div class="hero-copy">
@@ -37,7 +37,7 @@
               A placeholder-only interface showing how citation-gated Islamic AI answers are allowed, refused, escalated, or blocked before rendering.
             </p>
             <div class="hero-actions" aria-label="Ask preview actions">
-              <a href="#demo-input">View Sample Prompts</a>
+              <a href="#simulator">Try Safety Trace</a>
               <a href="#states">Inspect UI States</a>
             </div>
           </div>
@@ -48,6 +48,119 @@
               This page demonstrates answer containers, guardrail outcomes, and citation panel requirements without calling an LLM, live APIs, or religious content sources.
             </span>
           </aside>
+        </div>
+      </section>
+
+      <section id="simulator" class="section-band simulator-section" aria-labelledby="simulator-title">
+        <div class="shell">
+          <div class="section-heading simulator-heading">
+            <p class="eyebrow">Safety Trace Simulator</p>
+            <h2 id="simulator-title">Try the Rule-Based Safety Trace</h2>
+            <p>
+              Select a placeholder prompt type to see how DeenAI scores risk, checks citation support, and decides whether to allow, refuse, escalate, or block rendering.
+            </p>
+          </div>
+          <div class="simulator-layout">
+            <div class="glass simulator-panel">
+              <div class="trace-chip-grid" aria-label="Safety trace simulator prompt chips">
+                <button class="trace-chip active" type="button" data-trace-prompt="dua">Dua recommendation</button>
+                <button class="trace-chip" type="button" data-trace-prompt="quran">Quran explanation</button>
+                <button class="trace-chip" type="button" data-trace-prompt="invented">Invented Hadith request</button>
+                <button class="trace-chip" type="button" data-trace-prompt="high-risk">High-risk ruling request</button>
+                <button class="trace-chip" type="button" data-trace-prompt="bypass">Citation bypass request</button>
+              </div>
+              <p class="simulator-note">
+                Deterministic rule-based simulation only. No live model or live religious content retrieval.
+              </p>
+            </div>
+
+            <div class="glass trace-output" aria-live="polite">
+              <div class="trace-output-header">
+                <div>
+                  <p class="panel-label">Final Decision</p>
+                  <h3 id="trace-decision-title">ALLOW</h3>
+                </div>
+                <span id="trace-decision-badge" class="decision-badge decision-allow">ALLOW</span>
+              </div>
+
+              <div class="score-grid">
+                <article class="score-card">
+                  <span>Risk score</span>
+                  <strong id="trace-risk-score">10</strong>
+                </article>
+                <article class="score-card">
+                  <span>Citation score</span>
+                  <strong id="trace-citation-score">100</strong>
+                </article>
+              </div>
+
+              <ol id="trace-chain" class="trace-chain" aria-label="Deterministic safety trace">
+                <li>
+                  <span>Input</span>
+                  <strong>Dua recommendation</strong>
+                </li>
+                <li>
+                  <span>Classifier</span>
+                  <strong>Islamic learning</strong>
+                </li>
+                <li>
+                  <span>Retrieval Packet</span>
+                  <strong>Verified metadata</strong>
+                </li>
+                <li>
+                  <span>Citation Check</span>
+                  <strong>Supported</strong>
+                </li>
+                <li>
+                  <span>Guardrail</span>
+                  <strong>Allow</strong>
+                </li>
+                <li>
+                  <span>Render Decision</span>
+                  <strong>Allowed</strong>
+                </li>
+              </ol>
+
+              <dl class="trace-detail-grid">
+                <div>
+                  <dt>User prompt type</dt>
+                  <dd id="trace-prompt-type">Dua recommendation</dd>
+                </div>
+                <div>
+                  <dt>Intent</dt>
+                  <dd id="trace-intent">Islamic learning</dd>
+                </div>
+                <div>
+                  <dt>Risk level</dt>
+                  <dd id="trace-risk-level">low</dd>
+                </div>
+                <div>
+                  <dt>Citation required</dt>
+                  <dd id="trace-citation-required">yes</dd>
+                </div>
+                <div>
+                  <dt>Source packet status</dt>
+                  <dd id="trace-source-status">verified metadata</dd>
+                </div>
+                <div>
+                  <dt>Claim support status</dt>
+                  <dd id="trace-claim-status">mapped to source ID</dd>
+                </div>
+                <div>
+                  <dt>Guardrail decision</dt>
+                  <dd id="trace-guardrail-decision">allow</dd>
+                </div>
+                <div>
+                  <dt>Render decision</dt>
+                  <dd id="trace-render-decision">allowed</dd>
+                </div>
+                <div>
+                  <dt>Reason</dt>
+                  <dd id="trace-reason">Risk is below threshold and citation score meets render requirements.</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -235,119 +348,6 @@
           <li>Guardrail</li>
           <li>Render Decision</li>
         </ol>
-      </section>
-
-      <section class="section-band simulator-section" aria-labelledby="simulator-title">
-        <div class="shell">
-          <div class="section-heading">
-            <p class="eyebrow">Deterministic Trace</p>
-            <h2 id="simulator-title">Safety Trace Simulator</h2>
-          </div>
-          <div class="simulator-layout">
-            <div class="glass simulator-panel">
-              <p>
-                Choose a placeholder prompt type to inspect how DeenAI scores risk, verifies source metadata, applies guardrails, and decides whether a response can render.
-              </p>
-              <div class="trace-chip-grid" aria-label="Safety trace simulator prompt chips">
-                <button class="trace-chip active" type="button" data-trace-prompt="dua">Dua recommendation</button>
-                <button class="trace-chip" type="button" data-trace-prompt="quran">Quran explanation</button>
-                <button class="trace-chip" type="button" data-trace-prompt="invented">Invented Hadith request</button>
-                <button class="trace-chip" type="button" data-trace-prompt="high-risk">High-risk ruling request</button>
-                <button class="trace-chip" type="button" data-trace-prompt="bypass">Citation bypass request</button>
-              </div>
-              <p class="simulator-note">
-                Deterministic rule-based simulation only. No live model or live religious content retrieval.
-              </p>
-            </div>
-
-            <div class="glass trace-output" aria-live="polite">
-              <div class="trace-output-header">
-                <div>
-                  <p class="panel-label">Final Decision</p>
-                  <h3 id="trace-decision-title">ALLOW</h3>
-                </div>
-                <span id="trace-decision-badge" class="decision-badge decision-allow">ALLOW</span>
-              </div>
-
-              <div class="score-grid">
-                <article class="score-card">
-                  <span>Risk score</span>
-                  <strong id="trace-risk-score">10</strong>
-                </article>
-                <article class="score-card">
-                  <span>Citation score</span>
-                  <strong id="trace-citation-score">100</strong>
-                </article>
-              </div>
-
-              <ol id="trace-chain" class="trace-chain" aria-label="Deterministic safety trace">
-                <li>
-                  <span>Input</span>
-                  <strong>Dua recommendation</strong>
-                </li>
-                <li>
-                  <span>Classifier</span>
-                  <strong>Islamic learning</strong>
-                </li>
-                <li>
-                  <span>Retrieval Packet</span>
-                  <strong>Verified metadata</strong>
-                </li>
-                <li>
-                  <span>Citation Check</span>
-                  <strong>Supported</strong>
-                </li>
-                <li>
-                  <span>Guardrail</span>
-                  <strong>Allow</strong>
-                </li>
-                <li>
-                  <span>Render Decision</span>
-                  <strong>Allowed</strong>
-                </li>
-              </ol>
-
-              <dl class="trace-detail-grid">
-                <div>
-                  <dt>User prompt type</dt>
-                  <dd id="trace-prompt-type">Dua recommendation</dd>
-                </div>
-                <div>
-                  <dt>Intent</dt>
-                  <dd id="trace-intent">Islamic learning</dd>
-                </div>
-                <div>
-                  <dt>Risk level</dt>
-                  <dd id="trace-risk-level">low</dd>
-                </div>
-                <div>
-                  <dt>Citation required</dt>
-                  <dd id="trace-citation-required">yes</dd>
-                </div>
-                <div>
-                  <dt>Source packet status</dt>
-                  <dd id="trace-source-status">verified metadata</dd>
-                </div>
-                <div>
-                  <dt>Claim support status</dt>
-                  <dd id="trace-claim-status">mapped to source ID</dd>
-                </div>
-                <div>
-                  <dt>Guardrail decision</dt>
-                  <dd id="trace-guardrail-decision">allow</dd>
-                </div>
-                <div>
-                  <dt>Render decision</dt>
-                  <dd id="trace-render-decision">allowed</dd>
-                </div>
-                <div>
-                  <dt>Reason</dt>
-                  <dd id="trace-reason">Risk is below threshold and citation score meets render requirements.</dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section class="section-band metrics-section" aria-labelledby="ask-metrics-title">
