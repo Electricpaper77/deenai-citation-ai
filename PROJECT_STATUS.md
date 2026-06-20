@@ -2,7 +2,7 @@
 
 ## Current Project Status
 
-DeenAI is a static proof MVP for a citation-gated Islamic AI learning experience. The project now has planning docs, source governance metadata, rule-based evaluation artifacts, mock retrieval packet checks, claim-to-citation checks, static methodology UI, and placeholder-only Ask DeenAI UI states.
+DeenAI is a static proof MVP for a citation-gated Islamic AI learning experience. The project now has planning docs, source governance metadata, rule-based evaluation artifacts, mock retrieval packet checks, claim-to-citation checks, static methodology UI, placeholder-only Ask DeenAI UI states, and a deterministic Safety Trace Simulator.
 
 The current build is intentionally pre-production. It does not call a live LLM, does not call live APIs, does not render religious source text, and does not provide religious rulings.
 
@@ -16,6 +16,7 @@ Live demo: [https://deenai-citation-ai.vercel.app/](https://deenai-citation-ai.v
 
 - `index.html`: Static homepage and project positioning.
 - `ask.html`: Placeholder-only Ask DeenAI preview with safe answer states.
+- `scripts/deenai_trace_simulator.js`: Client-side deterministic risk/citation scoring simulator.
 - `how-it-works.html`: Evaluation methodology and safety chain page.
 - `sources.html`: Source governance and proof artifact inventory.
 
@@ -30,6 +31,7 @@ Live demo: [https://deenai-citation-ai.vercel.app/](https://deenai-citation-ai.v
 - Pre-UI safety summary.
 - Static UI shell validation.
 - Full static proof MVP validation.
+- Safety Trace Simulator validation.
 
 ## Current Proof Metrics
 
@@ -50,6 +52,7 @@ Label: Rule-Based Contract Validation
 - No live LLM.
 - No live API retrieval.
 - No deployed retrieval-generation system.
+- No live simulator backend.
 - No model-performance measurement.
 - No real religious content display.
 - No scholar approval claimed.
@@ -66,7 +69,7 @@ Label: Rule-Based Contract Validation
 
 ## Next Roadmap
 
-1. Capture screenshots.
+1. Capture screenshots, including the Safety Trace Simulator.
 2. Add screenshots to `docs/screenshots`.
 3. Update portfolio card.
 4. Post LinkedIn launch.

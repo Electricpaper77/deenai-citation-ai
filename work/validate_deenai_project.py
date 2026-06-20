@@ -15,6 +15,7 @@ REQUIRED_FILES = [
     "styles.css",
     "README.md",
     "PROJECT_STATUS.md",
+    "scripts/deenai_trace_simulator.js",
 ]
 
 REQUIRED_ARTIFACTS = [
@@ -56,6 +57,16 @@ ASK_STATES = {
     "Verifier failed": ["verifier failed", "unsupported claim"],
 }
 
+SIMULATOR_REQUIREMENTS = [
+    "Safety Trace Simulator",
+    "scripts/deenai_trace_simulator.js",
+    "Dua recommendation",
+    "Quran explanation",
+    "Invented Hadith request",
+    "High-risk ruling request",
+    "Citation bypass request",
+]
+
 REQUIRED_METRICS = {
     "60": "eval prompts",
     "22": "mock retrieval packets",
@@ -66,6 +77,7 @@ REQUIRED_METRICS = {
 
 OVERCLAIM_PATTERNS = [
     "scholar-approved",
+    "fatwa capability",
     "fatwa engine",
     "production rag",
     "real model accuracy",
@@ -186,6 +198,11 @@ def check_ask_states():
     return missing
 
 
+def check_trace_simulator():
+    text = read_text("ask.html")
+    return [item for item in SIMULATOR_REQUIREMENTS if item not in text]
+
+
 def check_metrics():
     missing = []
     for page in UI_PAGES:
@@ -232,6 +249,7 @@ def main():
     jsonl_errors = validate_jsonl_files(jsonl_files)
     missing_required_links, broken_links = check_links()
     missing_states = check_ask_states()
+    missing_simulator = check_trace_simulator()
     missing_metrics = check_metrics()
     overclaim_warnings = check_overclaims()
     prohibited_ui_warnings = check_prohibited_ui_labels()
@@ -244,6 +262,7 @@ def main():
     print_check("Required page links exist", not missing_required_links, missing_required_links)
     print_check("No broken local links", not broken_links, broken_links)
     print_check("Ask DeenAI states exist", not missing_states, missing_states)
+    print_check("Safety Trace Simulator exists", not missing_simulator, missing_simulator)
     print_check("Proof metrics appear consistently", not missing_metrics, missing_metrics)
     print_check("No prohibited overclaim phrases", not overclaim_warnings, overclaim_warnings)
     print_check("No prohibited UI content field labels", not prohibited_ui_warnings, prohibited_ui_warnings)
@@ -260,6 +279,7 @@ def main():
             missing_required_links,
             broken_links,
             missing_states,
+            missing_simulator,
             missing_metrics,
             overclaim_warnings,
             prohibited_ui_warnings,

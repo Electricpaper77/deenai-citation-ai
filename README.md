@@ -12,7 +12,7 @@ DeenAI is a recruiter-facing Applied GenAI prototype for citation-first Islamic 
 
 The current implementation is intentionally pre-production: it uses static UI pages, metadata-only source governance, rule-based pipeline checks, mock retrieval packets, and claim-to-citation verifier cases. It does not call a live LLM, does not call live religious content APIs, and does not render religious source text.
 
-Static UI pages now include a homepage, methodology page, sources/proof page, and Ask DeenAI preview page for placeholder-only answer states.
+Static UI pages now include a homepage, methodology page, sources/proof page, and Ask DeenAI preview page for placeholder-only answer states plus a deterministic safety trace simulator.
 
 ## Why DeenAI Exists
 
@@ -37,8 +37,11 @@ DeenAI models a citation-gated safety chain:
 5. Citation packet verification
 6. Claim-to-citation verification
 7. Render decision blocking
+8. Deterministic safety trace simulation
 
 The current pipeline is a contract stub, not deployed AI behavior. It simulates how future retrieval-augmented generation, source retrieval, citation verification, guardrails, and answer rendering would connect without generating religious content.
+
+The Ask DeenAI page includes a client-side Safety Trace Simulator. It uses static prompt categories and deterministic scoring rules to show risk score, citation score, guardrail decision, and render decision. It does not call a live model or live religious content retrieval.
 
 ## Source Governance
 
@@ -68,6 +71,7 @@ Source governance rules:
 Key artifacts:
 
 - `ask.html`
+- `scripts/deenai_trace_simulator.js`
 - `sources/source_registry.json`
 - `evals/deenai_eval_prompts.jsonl`
 - `evals/pipeline_eval_traces.jsonl`
@@ -149,6 +153,7 @@ python work/validate_deenai_project.py
 ```
 
 Checks required pages, proof artifacts, JSON/JSONL parsing, page links, Ask DeenAI safety states, proof metrics, overclaim wording, and prohibited UI display-content labels.
+It also checks that the Safety Trace Simulator script exists, is referenced by `ask.html`, and exposes all five static simulator prompt labels.
 
 ## Current Rule-Based Validation Metrics
 
