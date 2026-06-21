@@ -4,29 +4,37 @@ Live demo: [https://deenai-citation-ai.vercel.app/](https://deenai-citation-ai.v
 
 GitHub repo: [https://github.com/Electricpaper77/deenai-citation-ai](https://github.com/Electricpaper77/deenai-citation-ai)
 
-Proof artifacts: 7 source registry entries | 60 eval prompts | 60 pipeline traces | 22 mock retrieval packets | 28 claim-citation cases | 19 render-blocking scenarios | 0 prohibited UI content fields | Full validator: PASS
+## 30-Second Reviewer Summary
 
-## 30-Second Recruiter Proof
+DeenAI is a static, fixture-only Islamic AI reliability prototype that demonstrates citation-gated answer rendering before any live religious answer can appear.
 
-Open the live demo: [https://deenai-citation-ai.vercel.app/](https://deenai-citation-ai.vercel.app/)
+What it proves:
 
-DeenAI proves a citation-gated answer contract for Islamic AI reliability. It shows how an answer surface can allow low-risk educational placeholders, block unsupported answers, or escalate personal/high-risk questions before any live religious answer is rendered.
+- `ALLOW`, `BLOCK`, and `ESCALATE` answer-contract decisions can be shown without a live LLM or live RAG.
+- JSONL audit traces make each fixture decision inspectable.
+- Proof Chain cards summarize source registry, eval, retrieval-packet, claim-citation, and render-blocking checks.
+- Trust Pattern Compiler cards map reviewer UX, trust boundaries, citation evidence, and safety escalation into product proof.
+- The prototype does not issue fatwas, generate rulings, render religious source content, claim scholar approval, or call external religious APIs.
 
-What to verify:
+Validation metrics:
 
-- **ALLOW / BLOCK / ESCALATE flow:** the homepage contract demo renders deterministic fixture decisions.
-- **JSONL audit traces:** each fixture result exposes a compact audit trail.
-- **Proof Chain:** the Sources / Proof page summarizes registry, eval, retrieval packet, claim-citation, and render-blocking checks.
-- **Trust Pattern Compiler:** public proof cards map UX, trust, citation, and safety patterns into DeenAI features.
-- **Fixture-only boundary:** no live LLM, no live RAG, no external religious API calls, no rulings, and no scholar approval claims.
+| Metric | Count |
+| --- | ---: |
+| Source registry entries | 7 |
+| Eval prompts | 60 |
+| Pipeline traces | 60 |
+| Mock retrieval packets | 22 |
+| Claim-to-citation cases | 28 |
+| Render-blocking scenarios | 19 |
+| Prohibited UI content fields | 0 |
 
-Reviewer path:
+30-second reviewer path:
 
 1. Open the [live site](https://deenai-citation-ai.vercel.app/).
 2. Click the Ask DeenAI Contract Demo presets.
-3. Test `ALLOW`, `BLOCK`, and `ESCALATE`.
+3. Verify `ALLOW`, `BLOCK`, and `ESCALATE`.
 4. Open [Sources / Proof](https://deenai-citation-ai.vercel.app/sources.html).
-5. Verify the proof-chain cards and Trust Pattern Compiler section.
+5. Confirm the Proof Chain and Trust Pattern Compiler cards.
 
 Proof package:
 
@@ -37,9 +45,9 @@ Proof package:
 - [Proof Chain screenshot](docs/screenshots/deenai-proof-03-proof-chain.png)
 - [Trust Pattern Compiler screenshot](docs/screenshots/deenai-proof-04-trust-ux.png)
 
-Resume bullet:
+Final resume bullet:
 
-> Built and deployed DeenAI, a citation-gated Islamic AI reliability prototype with an interactive ALLOW/BLOCK/ESCALATE answer-contract demo, JSONL audit traces, 60 eval prompts, 28 claim-to-citation checks, and 19 render-blocking scenarios preventing unsupported answers before UI display.
+> Built and deployed DeenAI, a citation-gated Islamic AI reliability prototype with an interactive ALLOW/BLOCK/ESCALATE answer-contract demo, JSONL audit traces, source governance, trust-pattern mapping, 60 eval prompts, 28 claim-to-citation checks, and 19 render-blocking scenarios preventing unsupported answers before UI display.
 
 ## Project Overview
 

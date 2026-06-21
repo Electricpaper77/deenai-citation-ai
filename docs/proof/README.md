@@ -2,7 +2,7 @@
 
 Live demo: [https://deenai-citation-ai.vercel.app/](https://deenai-citation-ai.vercel.app/)
 
-Deployed commit: `4565847cfcb79a9a36366dbcf278ad223cfda67a`
+Deployed commit: `04f59a4c8e5a99825754492948f5959ccdf5421a`
 
 ## What This Proves
 
