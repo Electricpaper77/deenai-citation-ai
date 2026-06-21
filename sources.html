@@ -51,6 +51,66 @@
         </div>
       </section>
 
+      <section class="shell proof-chain-section" aria-labelledby="proof-chain-title">
+        <div class="proof-chain-intro">
+          <div>
+            <p class="eyebrow">Reviewer Quick Check</p>
+            <h2 id="proof-chain-title">30-Second Proof Chain</h2>
+          </div>
+          <div class="proof-chain-actions">
+            <button
+              type="button"
+              id="copy-proof-chain-resume"
+              data-resume-bullet="Built and deployed DeenAI, a citation-gated Islamic AI reliability prototype with an interactive ALLOW/BLOCK/ESCALATE answer-contract demo, JSONL audit traces, 60 eval prompts, 28 claim-to-citation checks, and 19 render-blocking scenarios preventing unsupported answers before UI display."
+            >
+              Copy Resume Bullet
+            </button>
+            <p id="proof-chain-copy-status" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="proof-chain-grid" aria-label="30-second proof chain cards">
+          <article class="proof-chain-card glass">
+            <span class="proof-status status-static">Static fixture</span>
+            <h3>Live Contract Demo</h3>
+            <p>Verifies ALLOW/BLOCK/ESCALATE answer-contract behavior without live religious answers.</p>
+            <strong>0 prohibited content fields</strong>
+          </article>
+          <article class="proof-chain-card glass">
+            <span class="proof-status status-verified">Verified</span>
+            <h3>JSONL Audit Trace</h3>
+            <p>Shows deterministic fixture decisions, guardrail status, and citation packet evidence.</p>
+            <strong>22 mock retrieval packets</strong>
+          </article>
+          <article class="proof-chain-card glass">
+            <span class="proof-status status-verified">Verified</span>
+            <h3>Source Registry</h3>
+            <p>Confirms source IDs must exist before citation packets can reference them.</p>
+            <strong>7 source registry entries</strong>
+          </article>
+          <article class="proof-chain-card glass">
+            <span class="proof-status status-verified">Verified</span>
+            <h3>Eval Prompt Set</h3>
+            <p>Checks learning, refusal, escalation, source-missing, and safety-boundary prompts.</p>
+            <strong>60 eval prompts</strong>
+          </article>
+          <article class="proof-chain-card glass">
+            <span class="proof-status status-blocking">Blocking check</span>
+            <h3>Claim-to-Citation Checks</h3>
+            <p>Requires placeholder claims to map to verified source IDs before rendering.</p>
+            <strong>28 claim-to-citation test cases</strong>
+          </article>
+          <article class="proof-chain-card glass">
+            <span class="proof-status status-blocking">Blocking check</span>
+            <h3>Render-Blocking Scenarios</h3>
+            <p>Prevents unsupported or unverifiable answers from reaching the UI.</p>
+            <strong>19 render-blocking scenarios</strong>
+          </article>
+        </div>
+        <p class="proof-chain-disclaimer">
+          This prototype uses fixture-only validation artifacts and does not render live religious rulings.
+        </p>
+      </section>
+
       <section id="registry" class="shell source-section" aria-labelledby="registry-title">
         <div class="section-heading">
           <p class="eyebrow">Approved Source Registry</p>
@@ -248,5 +308,68 @@
         </div>
       </div>
     </footer>
+    <script>
+      (function () {
+        const button = document.getElementById("copy-proof-chain-resume");
+        const status = document.getElementById("proof-chain-copy-status");
+
+        function fallbackCopy(text) {
+          const existingField = document.getElementById("proof-chain-copy-fallback");
+          if (existingField) {
+            existingField.remove();
+          }
+
+          const field = document.createElement("textarea");
+          field.id = "proof-chain-copy-fallback";
+          field.value = text;
+          field.setAttribute("readonly", "");
+          field.style.position = "fixed";
+          field.style.left = "12px";
+          field.style.bottom = "12px";
+          field.style.width = "1px";
+          field.style.height = "1px";
+          field.style.opacity = "0";
+          document.body.appendChild(field);
+          field.focus();
+          field.select();
+
+          let copied = false;
+          try {
+            copied = Boolean(document.execCommand && document.execCommand("copy"));
+          } catch (error) {
+            copied = false;
+          }
+
+          if (copied) {
+            document.body.removeChild(field);
+            return "copied";
+          }
+
+          return "selected";
+        }
+
+        async function copyResumeBullet() {
+          const text = button.dataset.resumeBullet;
+          let result = "copied";
+
+          try {
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(text);
+            } else {
+              result = fallbackCopy(text);
+            }
+          } catch (error) {
+            result = fallbackCopy(text);
+          }
+
+          status.textContent =
+            result === "copied" ? "Resume bullet copied." : "Resume bullet selected; press Ctrl+C to copy.";
+        }
+
+        if (button && status) {
+          button.addEventListener("click", copyResumeBullet);
+        }
+      })();
+    </script>
   </body>
 </html>
