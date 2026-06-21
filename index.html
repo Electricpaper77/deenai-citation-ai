@@ -52,6 +52,85 @@
         </div>
       </section>
 
+      <section class="shell contract-demo-section" aria-labelledby="contract-demo-title">
+        <div class="section-heading contract-demo-heading">
+          <p class="eyebrow">Ask DeenAI Contract Demo</p>
+          <h2 id="contract-demo-title">Citation-first reliability, fixture-only</h2>
+          <p>
+            This interactive demo uses hardcoded examples only. It does not call an LLM, run live RAG, generate new religious rulings, or render live religious answers.
+          </p>
+        </div>
+        <div class="contract-demo-grid">
+          <div class="contract-control-panel glass">
+            <p class="panel-label">Preset questions</p>
+            <div class="contract-question-buttons" aria-label="Ask DeenAI contract demo presets">
+              <button type="button" class="contract-question-button" data-contract-case="intention">
+                What is the importance of intention?
+              </button>
+              <button type="button" class="contract-question-button" data-contract-case="personal">
+                Can I get a ruling on a specific personal situation?
+              </button>
+              <button type="button" class="contract-question-button" data-contract-case="unverifiable">
+                What if the system cannot verify a source?
+              </button>
+            </div>
+            <div class="contract-disclaimer">
+              <strong>Visible boundary:</strong>
+              Static fixture output only. Not a religious ruling system, no scholar approval claimed, no live LLM, and no live RAG.
+            </div>
+            <div class="contract-mini-metrics" aria-label="Fixture metrics">
+              <span><strong>7</strong> source registry entries</span>
+              <span><strong>60</strong> eval prompts</span>
+              <span><strong>22</strong> mock retrieval packets</span>
+              <span><strong>28</strong> claim-to-citation test cases</span>
+              <span><strong>19</strong> render-blocking scenarios</span>
+              <span><strong>0</strong> prohibited content fields</span>
+            </div>
+          </div>
+
+          <article class="contract-result-panel glass" aria-live="polite">
+            <div class="contract-result-header">
+              <div>
+                <p class="panel-label">Rendered fixture result</p>
+                <h3 id="contract-question">What is the importance of intention?</h3>
+              </div>
+              <span id="contract-decision" class="contract-decision contract-decision-allow">ALLOW</span>
+            </div>
+            <dl class="contract-result-list">
+              <div>
+                <dt>Reason</dt>
+                <dd id="contract-reason"></dd>
+              </div>
+              <div>
+                <dt>Citation packet status</dt>
+                <dd id="contract-citation"></dd>
+              </div>
+              <div>
+                <dt>Claim-to-citation result</dt>
+                <dd id="contract-claim"></dd>
+              </div>
+              <div>
+                <dt>Render status</dt>
+                <dd id="contract-render"></dd>
+              </div>
+            </dl>
+            <div class="contract-answer-box">
+              <span>Answer surface</span>
+              <p id="contract-answer"></p>
+            </div>
+            <div class="contract-trace-header">
+              <span>JSONL audit trace</span>
+              <div>
+                <button type="button" id="copy-contract-trace">Copy JSONL Trace</button>
+                <button type="button" id="copy-contract-resume">Copy Resume Bullet</button>
+              </div>
+            </div>
+            <pre id="contract-trace" class="contract-trace-output"></pre>
+            <p id="contract-copy-status" class="contract-copy-status" aria-live="polite"></p>
+          </article>
+        </div>
+      </section>
+
       <section class="shell learning-section" aria-labelledby="learning-title">
         <div class="section-heading">
           <p class="eyebrow">Core Learning Paths</p>
@@ -204,5 +283,6 @@
         </div>
       </div>
     </footer>
+    <script src="scripts/deenai_contract_demo.js"></script>
   </body>
 </html>
