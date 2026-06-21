@@ -515,6 +515,50 @@ h2 {
   line-height: 1.5;
 }
 
+.trust-ux-section {
+  margin-top: 34px;
+}
+
+.compact-heading {
+  margin-bottom: 16px;
+}
+
+.trust-ux-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.trust-ux-card {
+  min-width: 0;
+  padding: 18px;
+}
+
+.trust-ux-card h3 {
+  margin: 0 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  line-height: 1.15;
+}
+
+.trust-ux-card p {
+  margin: 0;
+  color: var(--ivory-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.trust-ux-note {
+  margin: 12px 0 0;
+  border: 1px solid rgba(126, 231, 225, 0.22);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--ivory-muted);
+  background: rgba(126, 231, 225, 0.06);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
 .ask-section,
 .state-section {
   padding-block: 84px;
@@ -1362,7 +1406,8 @@ textarea {
   .artifact-grid,
   .preview-grid,
   .source-grid,
-  .state-grid {
+  .state-grid,
+  .trust-ux-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1428,6 +1473,7 @@ textarea {
   .trace-chain,
   .trace-detail-grid,
   .proof-chain-grid,
+  .trust-ux-grid,
   .chain {
     grid-template-columns: 1fr;
   }

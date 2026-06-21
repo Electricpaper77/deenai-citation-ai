@@ -8,6 +8,7 @@
       name="description"
       content="Inspect DeenAI source governance, validation reports, and rule-based contract proof artifacts."
     />
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -34,7 +35,7 @@
             <p class="eyebrow">Source governance</p>
             <h1>Sources & Proof Artifacts</h1>
             <p class="subtitle">
-              DeenAI uses source governance, validation reports, and rule-based contract checks before any Islamic AI answer is rendered.
+              DeenAI shows how source governance, validation reports, and rule-based contract checks can block unsupported Islamic AI answers before UI display.
             </p>
             <div class="hero-actions" aria-label="Sources page actions">
               <a href="#registry">View Registry</a>
@@ -45,7 +46,7 @@
             <p class="panel-label">Validation mode</p>
             <strong>Metadata before content</strong>
             <span>
-              This page links proof artifacts and source policies. It does not display live source content or generated religious answers.
+              This page links fixture proof artifacts and source policies. It does not display live source content, generated religious answers, or scholar approval.
             </span>
           </aside>
         </div>
@@ -109,6 +110,33 @@
         <p class="proof-chain-disclaimer">
           This prototype uses fixture-only validation artifacts and does not render live religious rulings.
         </p>
+        <section class="trust-ux-section" aria-labelledby="trust-ux-title">
+          <div class="section-heading compact-heading">
+            <p class="eyebrow">Research-Informed Safety</p>
+            <h2 id="trust-ux-title">Trust UX Improvements</h2>
+          </div>
+          <div class="trust-ux-grid" aria-label="Trust UX improvement cards">
+            <article class="trust-ux-card glass">
+              <h3>Clear Boundary</h3>
+              <p>DeenAI does not issue fatwas, rulings, or live religious answers.</p>
+            </article>
+            <article class="trust-ux-card glass">
+              <h3>Citation-Gated Rendering</h3>
+              <p>Answers render only when source IDs, citation requirements, and claim mapping pass.</p>
+            </article>
+            <article class="trust-ux-card glass">
+              <h3>Reviewer Proof Path</h3>
+              <p>The site exposes fixture metrics, JSONL traces, and proof-chain summaries for fast review.</p>
+            </article>
+            <article class="trust-ux-card glass">
+              <h3>Human Escalation</h3>
+              <p>Personal or high-risk questions are escalated instead of answered.</p>
+            </article>
+          </div>
+          <p class="trust-ux-note">
+            Competitive research informed the UX patterns, but no competitor content, religious text, branding, or source material was copied.
+          </p>
+        </section>
       </section>
 
       <section id="registry" class="shell source-section" aria-labelledby="registry-title">
@@ -271,6 +299,7 @@
         <div class="glass list-panel">
           <ul class="muted-list">
             <li>No live LLM</li>
+            <li>No live RAG</li>
             <li>No live API retrieval</li>
             <li>No deployed retrieval-generation stack</li>
             <li>No measured latency or cost</li>
