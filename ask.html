@@ -33,10 +33,15 @@
         <div class="shell hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Safe UI state preview</p>
-            <h1>Ask DeenAI Preview</h1>
+            <h1 data-i18n="askPreview">Ask DeenAI Preview</h1>
             <p class="subtitle">
               A placeholder-only interface showing how citation-gated Islamic AI answers are allowed, refused, escalated, or blocked before rendering.
             </p>
+            <div class="language-selector" role="group" aria-label="International learner language selector">
+              <button class="language-option active" type="button" data-lang="en" aria-pressed="true">English</button>
+              <button class="language-option" type="button" data-lang="ja" aria-pressed="false">日本語</button>
+              <button class="language-option" type="button" data-lang="zh-Hans" aria-pressed="false">简体中文</button>
+            </div>
             <div class="hero-actions" aria-label="Ask preview actions">
               <a href="#simulator">Try Safety Trace</a>
               <a href="#states">Inspect UI States</a>
@@ -52,10 +57,93 @@
         </div>
       </section>
 
+      <section id="international-mode" class="shell international-section" aria-labelledby="international-title">
+        <div class="international-grid">
+          <article class="glass international-card">
+            <div>
+              <p class="eyebrow">Fixture-only multilingual UX</p>
+              <h2 id="international-title">International Learner Mode</h2>
+              <p>
+                Japanese and Simplified Chinese UI previews for Muslims, new Muslims, and curious learners. This demo localizes interface labels, safety states, glossary terms, and refusal/escalation templates only. Religious source text remains blocked until source licensing, translator attribution, scholar review, and citation verification are complete.
+              </p>
+            </div>
+            <div class="trust-chip-row" aria-label="International learner mode trust boundaries">
+              <span data-i18n="chipUiOnly">UI localization only</span>
+              <span data-i18n="chipNoFatwa">No live fatwa</span>
+              <span data-i18n="chipNoLlm">No live LLM</span>
+              <span data-i18n="chipLicensing">Source licensing required</span>
+              <span data-i18n="chipCitationGate">Citation gate required</span>
+            </div>
+            <div class="localized-label-grid" aria-label="Localized safety labels preview">
+              <span data-i18n="safetyTraceSimulator">Safety Trace Simulator</span>
+              <span data-i18n="allow">ALLOW</span>
+              <span data-i18n="refuse">REFUSE</span>
+              <span data-i18n="escalate">ESCALATE</span>
+              <span data-i18n="sourceMissing">SOURCE MISSING</span>
+              <span data-i18n="citationRequired">Citation required</span>
+              <span data-i18n="sourcePacketVerified">Source packet verified</span>
+              <span data-i18n="claimMapped">Claim mapped to source ID</span>
+              <span data-i18n="blockedBeforeDisplay">Blocked before answer display</span>
+              <span data-i18n="placeholderOnly">Placeholder only</span>
+              <span data-i18n="noLiveBoundary">No live LLM / no live RAG / no religious ruling</span>
+            </div>
+          </article>
+
+          <article class="glass glossary-panel" aria-labelledby="glossary-title">
+            <div>
+              <p class="eyebrow">Beginner Glossary</p>
+              <h2 id="glossary-title">Localized UI terms</h2>
+            </div>
+            <dl class="glossary-grid">
+              <div>
+                <dt>Islam</dt>
+                <dd data-term="islam">Islam</dd>
+              </div>
+              <div>
+                <dt>Quran</dt>
+                <dd data-term="quran">Quran</dd>
+              </div>
+              <div>
+                <dt>Hadith</dt>
+                <dd data-term="hadith">Hadith</dd>
+              </div>
+              <div>
+                <dt>Dua</dt>
+                <dd data-term="dua">Dua</dd>
+              </div>
+              <div>
+                <dt>Fatwa</dt>
+                <dd data-term="fatwa">Fatwa</dd>
+              </div>
+              <div>
+                <dt>Scholar</dt>
+                <dd data-term="scholar">Scholar</dd>
+              </div>
+              <div>
+                <dt>Citation</dt>
+                <dd data-term="citation">Citation</dd>
+              </div>
+              <div>
+                <dt>Source verification</dt>
+                <dd data-term="sourceVerification">Source verification</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="glass disclaimer-panel" aria-labelledby="international-disclaimer-title">
+            <p class="eyebrow">Localized Disclaimer</p>
+            <h2 id="international-disclaimer-title">Interface only</h2>
+            <p data-i18n="localizedDisclaimer">
+              This multilingual preview localizes the interface only. It does not translate religious source content, issue rulings, or generate Islamic answers.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section id="simulator" class="section-band simulator-section" aria-labelledby="simulator-title">
         <div class="shell">
           <div class="section-heading simulator-heading">
-            <p class="eyebrow">Safety Trace Simulator</p>
+            <p class="eyebrow" data-i18n="safetyTraceSimulator">Safety Trace Simulator</p>
             <h2 id="simulator-title">Try the Rule-Based Safety Trace</h2>
             <p>
               Select a placeholder prompt type to see how DeenAI scores risk, checks citation support, and decides whether to allow, refuse, escalate, or block rendering.
@@ -411,5 +499,6 @@
       </div>
     </footer>
     <script src="scripts/deenai_trace_simulator.js"></script>
+    <script src="scripts/deenai_international_mode.js"></script>
   </body>
 </html>
