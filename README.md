@@ -45,6 +45,18 @@ Proof package:
 - [Proof Chain screenshot](docs/screenshots/deenai-proof-03-proof-chain.png)
 - [Trust Pattern Compiler screenshot](docs/screenshots/deenai-proof-04-trust-ux.png)
 
+International Learner Mode Preview:
+
+DeenAI includes a static International Learner Mode for English, Japanese, and Simplified Chinese interface previews. This feature localizes UI labels, safety states, glossary labels, and disclaimer copy only.
+
+It does not translate Quran, Hadith, duas, fatwas, or religious rulings. Religious source text remains blocked unless source licensing, attribution, scholar review, and citation verification are complete.
+
+Validation artifacts:
+
+- `ja_ui_labels_present`
+- `zh_hans_ui_labels_present`
+- `religious_source_translation_blocked`
+
 Final resume bullet:
 
 > Built and deployed DeenAI, a citation-gated Islamic AI reliability prototype with an interactive ALLOW/BLOCK/ESCALATE answer-contract demo, JSONL audit traces, source governance, trust-pattern mapping, 60 eval prompts, 28 claim-to-citation checks, and 19 render-blocking scenarios preventing unsupported answers before UI display.

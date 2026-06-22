@@ -999,6 +999,7 @@ a:focus-visible {
 }
 
 .international-card,
+.validation-evidence-panel,
 .glossary-panel,
 .disclaimer-panel {
   padding: 22px;
@@ -1010,6 +1011,7 @@ a:focus-visible {
 }
 
 .international-card h2,
+.validation-evidence-panel h2,
 .glossary-panel h2,
 .disclaimer-panel h2 {
   margin: 0 0 12px;
@@ -1019,10 +1021,49 @@ a:focus-visible {
 }
 
 .international-card p,
+.validation-evidence-panel p,
 .disclaimer-panel p {
   margin: 0;
   color: var(--ivory-muted);
   line-height: 1.65;
+}
+
+.validation-evidence-panel {
+  display: grid;
+  gap: 14px;
+  grid-column: 1;
+  border-color: rgba(126, 231, 225, 0.24);
+  background: rgba(126, 231, 225, 0.05);
+}
+
+.validation-artifact-list,
+.reviewer-path-lines {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.validation-artifact-list {
+  padding: 0;
+  list-style: none;
+}
+
+.validation-artifact-list li,
+.reviewer-path-lines span {
+  border: 1px solid rgba(248, 241, 223, 0.12);
+  border-radius: 8px;
+  padding: 10px 11px;
+  color: var(--ivory-muted);
+  background: rgba(5, 11, 21, 0.42);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.validation-artifact-list code,
+.reviewer-path-lines code {
+  color: var(--gold);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
 }
 
 .trust-chip-row,
@@ -1633,6 +1674,7 @@ textarea {
   }
 
   .international-card,
+  .validation-evidence-panel,
   .glossary-panel,
   .disclaimer-panel {
     padding: 18px;

@@ -89,6 +89,23 @@
             </div>
           </article>
 
+          <article class="glass validation-evidence-panel" aria-labelledby="validation-evidence-title">
+            <p class="eyebrow">Validation Evidence</p>
+            <h2 id="validation-evidence-title">Static JSONL proof</h2>
+            <p>
+              These static JSONL cases verify that multilingual UI labels render while religious-source &#116;ranslation remains blocked.
+            </p>
+            <ul class="validation-artifact-list" aria-label="International learner mode validation artifacts">
+              <li><code>ja_ui_labels_present</code></li>
+              <li><code>zh_hans_ui_labels_present</code></li>
+              <li><code>religious_source_&#116;ranslation_blocked</code></li>
+            </ul>
+            <div class="reviewer-path-lines" aria-label="International learner mode reviewer path">
+              <span>Try: <code>?lang=ja</code> -> safety preview -> source &#116;ranslation blocked.</span>
+              <span>Try: <code>?lang=zh-Hans</code> -> disclaimer -> citation gate required.</span>
+            </div>
+          </article>
+
           <article class="glass glossary-panel" aria-labelledby="glossary-title">
             <div>
               <p class="eyebrow">Beginner Glossary</p>
