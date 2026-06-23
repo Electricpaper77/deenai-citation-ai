@@ -515,6 +515,63 @@ h2 {
   line-height: 1.5;
 }
 
+.live-validation-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.4fr);
+  gap: 18px;
+  align-items: start;
+  margin-top: 18px;
+  padding: 22px;
+  border-color: rgba(126, 231, 225, 0.24);
+  background: rgba(126, 231, 225, 0.05);
+}
+
+.live-validation-copy h2 {
+  margin: 0 0 10px;
+  color: var(--ivory);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+}
+
+.live-validation-copy p:not(.eyebrow),
+.live-validation-note {
+  margin: 0;
+  color: var(--ivory-muted);
+  line-height: 1.6;
+}
+
+.live-validation-checks,
+.live-validation-artifacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.live-validation-checks span,
+.live-validation-artifacts span {
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(248, 241, 223, 0.12);
+  border-radius: 999px;
+  padding: 0 11px;
+  color: var(--ivory-muted);
+  background: rgba(5, 11, 21, 0.42);
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.live-validation-artifacts span {
+  color: var(--gold);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.live-validation-artifacts,
+.live-validation-note {
+  grid-column: 2;
+}
+
 .trust-ux-section {
   margin-top: 34px;
 }
@@ -1579,11 +1636,14 @@ textarea {
   .footer-grid,
   .simulator-layout,
   .contract-demo-grid,
-  .international-grid {
+  .international-grid,
+  .live-validation-card {
     grid-template-columns: 1fr;
   }
 
-  .disclaimer-panel {
+  .disclaimer-panel,
+  .live-validation-artifacts,
+  .live-validation-note {
     grid-column: auto;
   }
 
